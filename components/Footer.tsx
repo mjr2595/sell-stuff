@@ -1,4 +1,4 @@
-const Footer = ({ font }: { font: string }) => {
+const Footer = ({ font }: { font?: string }) => {
   return (
     <footer className="py-12 bg-gray-952 text-gray-953">
       <div

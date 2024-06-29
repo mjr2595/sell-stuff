@@ -8,12 +8,18 @@ importers:
 
   .:
     dependencies:
+      '@supabase/auth-helpers-nextjs':
+        specifier: ^0.10.0
+        version: 0.10.0(@supabase/supabase-js@2.43.5)
       '@supabase/ssr':
         specifier: ^0.3.0
         version: 0.3.0(@supabase/supabase-js@2.43.5)
       '@supabase/supabase-js':
         specifier: ^2.43.5
         version: 2.43.5
+      framer-motion:
+        specifier: ^11.2.12
+        version: 11.2.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next:
         specifier: 14.2.3
         version: 14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -193,6 +199,16 @@ packages:
 
   '@rushstack/eslint-patch@1.10.3':
     resolution: {integrity: sha512-qC/xYId4NMebE6w/V33Fh9gWxLgURiNYgVNObbJl2LZv0GUUItCcCqC5axQSwRaAgaxl2mELq1rMzlswaQ0Zxg==}
+
+  '@supabase/auth-helpers-nextjs@0.10.0':
+    resolution: {integrity: sha512-2dfOGsM4yZt0oS4TPiE7bD4vf7EVz7NRz/IJrV6vLg0GP7sMUx8wndv2euLGq4BjN9lUCpu6DG/uCC8j+ylwPg==}
+    peerDependencies:
+      '@supabase/supabase-js': ^2.39.8
+
+  '@supabase/auth-helpers-shared@0.7.0':
+    resolution: {integrity: sha512-FBFf2ei2R7QC+B/5wWkthMha8Ca2bWHAndN+syfuEUUfufv4mLcAgBCcgNg5nJR8L0gZfyuaxgubtOc9aW3Cpg==}
+    peerDependencies:
+      '@supabase/supabase-js': ^2.39.8
 
   '@supabase/auth-js@2.64.2':
     resolution: {integrity: sha512-s+lkHEdGiczDrzXJ1YWt2y3bxRi+qIUnXcgkpLSrId7yjBeaXBFygNjTaoZLG02KNcYwbuZ9qkEIqmj2hF7svw==}
@@ -713,6 +729,20 @@ packages:
     resolution: {integrity: sha512-TMKDUnIte6bfb5nWv7V/caI169OHgvwjb7V4WkeUvbQQdjr5rWKqHFiKWb/fcOwB+CzBT+qbWjvj+DVwRskpIg==}
     engines: {node: '>=14'}
 
+  framer-motion@11.2.12:
+    resolution: {integrity: sha512-lCjkV4nA9rWOy2bhR4RZzkp2xpB++kFmUZ6D44V9VQaxk+JDmbDd5lq+u58DjJIIllE8AZEXp9OG/TyDN4FB/w==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
   fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
 
@@ -962,6 +992,9 @@ packages:
   jiti@1.21.6:
     resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
     hasBin: true
+
+  jose@4.15.7:
+    resolution: {integrity: sha512-L7ioP+JAuZe8v+T5+zVI9Tx8LtU8BL7NxkyDFVMv+Qr3JW0jSoYDedLtodaXwfqMpeCyx4WXFNyu9tJt4WvC1A==}
 
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -1331,6 +1364,9 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  set-cookie-parser@2.6.0:
+    resolution: {integrity: sha512-RVnVQxTXuerk653XfuliOxBP81Sf0+qfQE73LIYKcyMYHG94AuH0kgrQpRDuTZnSmjpysHmzxJXKNfa6PjFhyQ==}
+
   set-function-length@1.2.2:
     resolution: {integrity: sha512-pgRc4hJ4/sNjWCSS9AmnS40x3bNMDTknHgL5UaMBTMyJnU90EgWh1Rz+MC9eFu4BuN/UwZjKQuY/1v3rM7HMfg==}
     engines: {node: '>= 0.4'}
@@ -1697,6 +1733,17 @@ snapshots:
     optional: true
 
   '@rushstack/eslint-patch@1.10.3': {}
+
+  '@supabase/auth-helpers-nextjs@0.10.0(@supabase/supabase-js@2.43.5)':
+    dependencies:
+      '@supabase/auth-helpers-shared': 0.7.0(@supabase/supabase-js@2.43.5)
+      '@supabase/supabase-js': 2.43.5
+      set-cookie-parser: 2.6.0
+
+  '@supabase/auth-helpers-shared@0.7.0(@supabase/supabase-js@2.43.5)':
+    dependencies:
+      '@supabase/supabase-js': 2.43.5
+      jose: 4.15.7
 
   '@supabase/auth-js@2.64.2':
     dependencies:
@@ -2426,6 +2473,13 @@ snapshots:
       cross-spawn: 7.0.3
       signal-exit: 4.1.0
 
+  framer-motion@11.2.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      tslib: 2.6.3
+    optionalDependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   fs.realpath@1.0.0: {}
 
   fsevents@2.3.3:
@@ -2684,6 +2738,8 @@ snapshots:
       '@pkgjs/parseargs': 0.11.0
 
   jiti@1.21.6: {}
+
+  jose@4.15.7: {}
 
   js-tokens@4.0.0: {}
 
@@ -3043,6 +3099,8 @@ snapshots:
   semver@6.3.1: {}
 
   semver@7.6.2: {}
+
+  set-cookie-parser@2.6.0: {}
 
   set-function-length@1.2.2:
     dependencies:

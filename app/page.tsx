@@ -6,7 +6,6 @@ export const revalidate = 0;
 
 export default async function Home() {
   const supabase = createClient();
-
   const { data: products } = await supabase.from("sellstuff-products").select();
 
   const { data: topProducts } = await supabase
